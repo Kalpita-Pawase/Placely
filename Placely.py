@@ -3,6 +3,13 @@ from PIL import Image
 import base64
 from io import BytesIO
 
+# Show logout only if logged in
+if st.session_state.get("logged_in"):
+    if st.sidebar.button("Logout"):
+        st.session_state.logged_in = False
+        st.success("You have been logged out!")
+        st.switch_page("pages/1_login_Page.py")
+
 # Load and encode logo
 def get_image_base64(path):
     img = Image.open(path)
@@ -42,9 +49,3 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-# Navigation Links
-st.markdown("### Navigation")
-st.page_link("pages/1_login_page.py", label="Go to Login Page")
-st.page_link("pages/2_home_page.py", label="Go to Home Page")
-st.page_link("pages/3_query_page.py", label="Go to Query Page")

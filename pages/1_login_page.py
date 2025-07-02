@@ -2,9 +2,19 @@ import streamlit as st
 from PIL import Image
 import base64
 from io import BytesIO
+import time
+
+if st.session_state.get("logged_in"):
+    st.success("Already logged in! Redirecting to Home...")
+    time.sleep(1)  # Small pause to show the message
+    st.switch_page("pages/2_home_page.py")
+    
 
 
-st.title(":orange[Login Page]")
+st.markdown(
+    "<h1 style='text-align: center; color: #FFBF00;'>Login Page</h1>",
+    unsafe_allow_html=True
+)
 
 username = st.text_input("Username")
 password = st.text_input("Password", type="password")

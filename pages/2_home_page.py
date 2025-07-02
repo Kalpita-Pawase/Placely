@@ -15,8 +15,22 @@ from PIL import Image
 
 import streamlit as st
 
+if "logged_in" not in st.session_state or not st.session_state.logged_in:
+        st.warning("Please log in first.")
+        st.stop()  # Prevents rest of the page from rendering
 
-st.title(":green[Home Page]")
+
+st.markdown(
+    "<h1 style='text-align: center; color: #FFBF00;'>Home Page</h1>",
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    "<h6 style='text-align: center; color: black;'>Your central dashboard for Placely insights</h6>",
+    unsafe_allow_html=True
+)
+
+st.markdown("---")
 
 def app():
     if not st.session_state.get("logged_in"):
@@ -24,16 +38,20 @@ def app():
         st.session_state.page = "login"
         return
     
+    
     st.title("Home Page")
     st.write("Welcome to Placely! This is your smart placement assistant.")
+
+    import streamlit as st
+
+
+
 
 # Name of the browser tab in streamlit
 
 
 
 st.set_page_config(page_title="Home Page", layout="wide")
-
-st.markdown("---")
 
 
 # To connect to MySQL database ( Database name - placely)
@@ -52,7 +70,7 @@ df = load_data()
 
 #  >>>>>>>>>>> 1. Show table with full data
 
-st.markdown("<h5 style='text-align:center;'>Placely: Student Placement Dashboard</h5>", unsafe_allow_html=True)
+st.markdown("<h5 style='text-align:center;'>Student Placement Dashboard</h5>", unsafe_allow_html=True)
 
 st.dataframe(df, use_container_width=True, hide_index=True)
 
@@ -63,7 +81,7 @@ st.markdown("---")
 #  >>>>>>>>>>> 2. Dropdown section for filtering
 
 st.subheader("Apply a Filter")
-option = st.selectbox("Choose your option", [
+option = st.selectbox("Apply filter and download your data", [
     "-- Select One --",
     "CGPA above 8",
     "Placement Ready: Yes",
@@ -96,10 +114,6 @@ else:
 if not filtered_df.empty:
     st.subheader("Filtered Student Results")
     st.dataframe(filtered_df, use_container_width=True, hide_index = True)
-
-
-
-# >>>>>>>>>>> 5. Get download bitton
 
     st.download_button(
         label=" Download Filtered CSV ↓",

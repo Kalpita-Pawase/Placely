@@ -12,18 +12,23 @@ from faker import Faker
 from sqlalchemy import create_engine
 from PIL import Image
 
-
-st.title(":blue[Query Page]")
-st.markdown("Ask any query")
-
-def app():
-    if not st.session_state.get("logged_in"):
-        st.warning("Please login first.")
-        st.session_state.page = "login"
-        return
+if "logged_in" not in st.session_state or not st.session_state.logged_in:
+        st.warning("Please log in first.")
+        st.stop()  # Prevents rest of the page from rendering
 
 
+st.markdown(
+    "<h1 style='text-align: center; color: #FFBF00;'>Query Insights</h1>",
+    unsafe_allow_html=True
+)
+st.markdown(
+    "<h6 style='text-align: center; color: black;'>Ask any query..</h6>",
+    unsafe_allow_html=True
+)
 
+st.markdown("---")
+
+    
 st.set_page_config(page_title="Query Insights", layout="wide")
 
 # Connect to MySQL database (placely)
@@ -112,7 +117,7 @@ query_options = [
     "Count by CGPA Range"
 ]
 
-selected_query = st.selectbox("", query_options)
+selected_query = st.selectbox("Get results for your query and download the data", query_options)
 
 if selected_query:
     result_df = run_query(selected_query)
