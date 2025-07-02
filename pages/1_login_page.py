@@ -4,6 +4,8 @@ import base64
 from io import BytesIO
 
 
+st.title("Login")
+
 def get_image_base64(path):
     img = Image.open(path)
     buffered = BytesIO()

@@ -15,6 +15,9 @@ from PIL import Image
 
 import streamlit as st
 
+
+st.title("Home")
+
 def app():
     if not st.session_state.get("logged_in"):
         st.warning("Please login first.")

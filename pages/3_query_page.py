@@ -12,17 +12,17 @@ from faker import Faker
 from sqlalchemy import create_engine
 from PIL import Image
 
+
+st.title("Query Insights")
+st.markdown("Ask any query")
+
 def app():
     if not st.session_state.get("logged_in"):
         st.warning("Please login first.")
         st.session_state.page = "login"
         return
-    
-    st.title("Query Page")
-    st.write("Ask any query..")
 
 
-    
 
 st.set_page_config(page_title="Query Insights", layout="wide")
 
