@@ -1,26 +1,14 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
 from PIL import Image
 import base64
 from io import BytesIO
 
-
-# Define pages using relative paths
-login_page = st.Page("pages/1_login_page.py", title="Login")
-home_page = st.Page("pages/2_home_page.py", title="Home")
-query_page = st.Page("pages/3_query_page.py", title="Query Insights")
-
-# Create navigation menu
-pg = st.navigation([login_page, home_page, query_page])
-pg.run()
-
-
+# Load and encode logo
 def get_image_base64(path):
     img = Image.open(path)
     buffered = BytesIO()
     img.save(buffered, format="PNG")
-    img_bytes = buffered.getvalue()
-    return base64.b64encode(img_bytes).decode()
+    return base64.b64encode(buffered.getvalue()).decode()
 
 img_base64 = get_image_base64("icons/Logo.png")
 
@@ -42,15 +30,21 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Welcome content
 st.markdown(
     """
     <div style='text-align: center;'>
-        <h1 style='color: #4CAF50;'>Welcome to Placely 🎓</h1>
+        <h1 style='color: #FFBF00;'>Welcome to Placely 🎓</h1>
         <p style='font-size: 18px; color: #555;'>Your one-stop platform for tracking, filtering, and unlocking placement opportunities with ease.</p>
-        <p style='font-size: 16px; color: #777;'>Explore student insights, filter eligibility, and access curated placement data — all in one place.</p>
+        <p style='font-size: 16px; color: #777;'>Explore student insights, filter eligibility, and access curated placement data</p>
         <hr style='border: 1px solid #ccc; width: 60%; margin: auto;'>
-        <p style='font-size: 14px; color: #999;'>Made with 💚 by Kalpita Pawase</p>
     </div>
     """,
     unsafe_allow_html=True
 )
+
+# Navigation Links
+st.markdown("### Navigation")
+st.page_link("pages/1_login_page.py", label="Go to Login Page")
+st.page_link("pages/2_home_page.py", label="Go to Home Page")
+st.page_link("pages/3_query_page.py", label="Go to Query Page")

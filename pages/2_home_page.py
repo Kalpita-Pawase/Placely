@@ -16,7 +16,7 @@ from PIL import Image
 import streamlit as st
 
 
-st.title("Home")
+st.title(":green[Home Page]")
 
 def app():
     if not st.session_state.get("logged_in"):

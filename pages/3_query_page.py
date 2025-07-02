@@ -13,7 +13,7 @@ from sqlalchemy import create_engine
 from PIL import Image
 
 
-st.title("Query Insights")
+st.title(":blue[Query Page]")
 st.markdown("Ask any query")
 
 def app():
@@ -93,8 +93,6 @@ def run_query(selected):
     else:
         return pd.DataFrame()
 
-# UI
-st.title("Query Insights")
 
 query_options = [
     "-- Select One --",
