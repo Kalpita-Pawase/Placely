@@ -1,0 +1,8 @@
+faker
+streamlit
+pandas
+sqlalchemy
+mysql-connector-python
+faker
+streamlit_option_menu
+streamlit_authenticator
