@@ -1,0 +1,35 @@
+.streamlit/
+
+# Ignore Streamlit secrets
+.streamlit/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore virtual environment folders
+venv/
+env/
+.venv/
+
+# Ignore local database files (if any)
+*.db
+*.sqlite3
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore logs or temporary files
+*.log
+*.tmp
+
+# Ignore hidden files or folders
+*.swp
+*~
+
+# VS Code settings (optional)
+.vscode/
