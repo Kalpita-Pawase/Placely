@@ -6,6 +6,8 @@ from PIL import Image
 import base64
 from io import BytesIO
 import time
+from db_connection import engine
+
 
                                                                                                 
                                                                                         # Load and Logo preview above TITLE - LOGIN

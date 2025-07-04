@@ -15,6 +15,8 @@ import pandas as pd
 from io import BytesIO
 from faker import Faker
 from PIL import Image
+from db_connection import engine
+
 
 
                                                         # Load and Logo at the top right corner of the web page
