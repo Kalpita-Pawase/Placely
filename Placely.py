@@ -10,6 +10,18 @@ from db_connection import engine
 
                                                                                                
                                                                                                 # Show logout only if logged in
+# Connect to MySQL
+conn = st.connection("mysql", type="sql")
+
+# Query data
+df = conn.query("SELECT * FROM students", ttl=600)
+st.dataframe(df)
+
+# Download CSV
+csv = df.to_csv(index=False).encode('utf-8')
+st.download_button("Download CSV ↓", data=csv, file_name="students.csv", mime="text/csv")
+
+
 
 
 if st.session_state.get("logged_in"):
