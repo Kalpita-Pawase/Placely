@@ -4,7 +4,7 @@ import pandas as pd
 from PIL import Image
 import base64
 from io import BytesIO
-
+from db_connection import conn
 
 
 # Set page config
