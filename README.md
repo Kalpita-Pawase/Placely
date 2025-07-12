@@ -1,5 +1,5 @@
 Login using the following credentials :
-username - admin
+username - admin   |    
 password - 123
 
 # 📊 Placely – Student Placement Dashboard
