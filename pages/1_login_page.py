@@ -1,13 +1,13 @@
 # Importing
 import streamlit as st
 from PIL import Image
+from sqlalchemy import create_engine
 import base64
 from io import BytesIO
 import time
+from db import engine
 
-# Optional: if db_connection.py is needed later
 
-from db_connection import engine  
 
 
 # ------------------------ Set Page Config ------------------------
