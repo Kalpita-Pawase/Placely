@@ -2,7 +2,7 @@ Login using the following credentials :
 username - admin   |    
 password - 232000
 
-# 📊 Placely – Student Placement Dashboard
+# Placely – Student Placement Dashboard
 
 Placely is an interactive **Streamlit web app** that connects to a **MySQL database hosted on Railway** to visualize and filter synthetic student placement data.  
 It helps track and download data about:
@@ -13,7 +13,7 @@ It helps track and download data about:
 
 ---
 
-## 🛠 Features
+# Features
 ✅ Login-protected dashboard  
 ✅ View unfiltered and filtered tables  
 ✅ Advanced filtering for:
@@ -26,7 +26,7 @@ It helps track and download data about:
 
 ---
 
-## ⚙️ Tech Stack
+# Tech Stack
 - **Frontend & App**: Python, Streamlit
 - **Database**: MySQL (hosted on Railway)
 - **ORM & Data**: SQLAlchemy, Pandas
@@ -34,7 +34,7 @@ It helps track and download data about:
 
 ---
 
-## 🚀 How to Run Locally
+# How to Run Locally
 
 1. **Clone this repo:**
 ```bash
