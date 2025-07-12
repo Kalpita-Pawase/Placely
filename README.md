@@ -1,3 +1,7 @@
+Login using the following credentials :
+username - admin
+password - 123
+
 # 📊 Placely – Student Placement Dashboard
 
 Placely is an interactive **Streamlit web app** that connects to a **MySQL database hosted on Railway** to visualize and filter synthetic student placement data.  
