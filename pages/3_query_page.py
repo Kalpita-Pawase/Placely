@@ -56,7 +56,7 @@ if st.session_state.get("logged_in"):
     if st.sidebar.button("Logout"):
         st.session_state.logged_in = False
         st.success("You have been logged out!")
-        st.switch_page("pages/1_login_Page.py")
+        st.switch_page("pages/1_login_page.py")
 
 
 

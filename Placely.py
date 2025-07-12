@@ -14,7 +14,7 @@ if st.session_state.get("logged_in"):
     if st.sidebar.button("Logout"):
         st.session_state.logged_in = False
         st.success("Logged out!")
-        st.switch_page("pages/1_login_Page.py")
+        st.switch_page("pages/1_login_page.py")
 
 # Load & Center Logo Function
 def display_center_logo(path, width=80):
